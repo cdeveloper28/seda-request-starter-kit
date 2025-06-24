@@ -4,7 +4,7 @@
   "description": "Starter kit for building and deploying SEDA oracle data requests with EVM integration",
   "type": "module",
   "scripts": {
-    "build": "bun run build",
+      "build": "bun run build",
     "deploy": "bun run build && bunx seda-sdk oracle-program upload ./target/wasm32-wasip1/release-wasm/oracle-program.wasm",
     "start": "bun run ./scripts/post-dr.ts",
     "test": "bun run build && bun test"
@@ -20,13 +20,14 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@seda-protocol/dev-tools": "^1.0.0-rc.14",
+    "@seda-protocol/dev-tools": "^1.0.0-rc.15",
     "@types/bun": "^1.2.13",
     "bignumber.js": "^9.3.0",
     "binaryen": "^123.0.0",
     "wabt": "^1.0.37"
   },
   "dependencies": {
-    "@seda-protocol/vm": "^1.0.12"
+    "@seda-protocol/vm": "^1.0.12",
+    "openai": "^5.7.0"
   }
 }
