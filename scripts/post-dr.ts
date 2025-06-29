@@ -9,7 +9,7 @@ async function main() {
     const signingConfig = buildSigningConfig({});
     const signer = await Signer.fromPartial(signingConfig);
 
-    console.log('Posting and waiting for a result, this may take a little while..');
+    console.log('Posting and waiting for a result, this may take a lil while cdev..');
 
     const dataRequestInput: PostDataRequestInput = {
         consensusOptions: {
@@ -22,12 +22,10 @@ async function main() {
     };
 
     const result = await postAndAwaitDataRequest(signer, dataRequestInput, {});
-    const explorerLink = process.env.SEDA_EXPLORER_URL ? process.env.SEDA_EXPLORER_URL + `/data-requests/${result.drId}/${result.drBlockHeight}` : "Configure env.SEDA_EXPLORER_URL to generate a link to your DR";
 
     console.table({
         ...result,
-        blockTimestamp: result.blockTimestamp ? result.blockTimestamp.toISOString() : '',
-        explorerLink
+        blockTimestamp: result.blockTimestamp ? result.blockTimestamp.toISOString() : ''
     });
 }
 
