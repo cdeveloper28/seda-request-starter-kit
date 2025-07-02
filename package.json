@@ -4,7 +4,7 @@
   "description": "Starter kit for building and deploying SEDA oracle data requests with EVM integration",
   "type": "module",
   "scripts": {
-      "build": "bun run build",
+      "build": "bun run src/server.ts",
     "deploy": "bun run build && bunx seda-sdk oracle-program upload ./target/wasm32-wasip1/release-wasm/oracle-program.wasm",
     "start": "bun run ./scripts/post-dr.ts",
     "test": "bun run build && bun test"
