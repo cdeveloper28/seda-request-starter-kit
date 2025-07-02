@@ -63,6 +63,13 @@ pub fn execution_phase() -> Result<()> {
     }
  log!("🌐 view on pennywise247.vercel.app");
 
+ use std::fs;
+
+let json = serde_json::to_string_pretty(&trimmed)?;
+fs::write("/mnt/data/cron-output.txt", &json)?;
+Process::success(json.as_bytes());
+
+
     let json = serde_json::to_vec(&trimmed)?;
     Process::success(&json); // ✅ sends only the trimmed list to SEDA
 
